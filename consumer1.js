@@ -5,11 +5,11 @@ const client = new kafka.KafkaClient({kafkaHost: 'localhost:9092'});
 let consumer = new Consumer(
     client,
     [
-        {topic: 'consumerGroup1', partition: 0},    // broker can have multiple partition
-        {topic: 'consumerGroup2', partition: 0}
+        {topic: 'messageTopic1', partition: 0},    // broker can have multiple partition
+        {topic: 'messageTopic2', partition: 0}
     ],
     {
-        autoCommit: false                     // message acknowledge
+        autoCommit: true                     // message acknowledge
     }
 );
 
